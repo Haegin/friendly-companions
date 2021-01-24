@@ -1,0 +1,40 @@
+{
+  "Tomatoes": {
+    "friends": [
+      "Asparagus",
+      "Basil",
+      "Beans",
+      "Borage",
+      "Carrots",
+      "Celery",
+      "Chives",
+      "Cucumbers",
+      "Garlic",
+      "Lettuce",
+      "Marigolds",
+      "Mint",
+      "Nasturtium",
+      "Onion",
+      "Parsley",
+      "Peppers",
+      "Bee Balm"
+    ],
+    "enemies": ["Brassicas", "Corn", "Dill", "Fennel", "Potatoes"]
+  },
+  "Peppers": {
+    "friends": ["Tomatoes", "Parsley", "Basil", "Carrots"],
+    "enemies": ["Fennel"]
+  },
+  "Broccoli": {
+    "friends": ["Celery", "Dill", "Rosemary", "Hyssop"],
+    "enemies": ["Strawberries", "Tomatoes", "Oregano"]
+  },
+  "Cabbage": {
+    "friends": ["Beets", "Potatoes", "Onion", "Sage", "Celery", "Chamomile"],
+    "enemies": ["Strawberries", "Tomatoes", "Eggplant"]
+  },
+  "Carrots": {
+    "friends": ["Beans", "Lettuce", "Peas", "Tomatoes", "Onions", "Chives"],
+    "enemies": ["Chives", "Dill", "Parsnip"]
+  }
+}
