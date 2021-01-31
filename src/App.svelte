@@ -44,62 +44,40 @@
     />
   {/each}
   <Col>
-    {#if intersection(enemies, selected).length > 0}
-      <Alert class="red-text" border="top" coloredBorder>
-        Some of the plants you've selected don't play nicely together.
+    {#if selected.length > 0}
+      {#if intersection(enemies, selected).length > 0}
+        <Alert class="red-text" border="top" coloredBorder>
+          Some of the plants you've selected don't play nicely together.
+        </Alert>
+      {/if}
+      <Row>
+        <Col>
+          <List
+            title="Friends"
+            items={friends}
+            color="green"
+            icon="heart"
+            {selected}
+            {handleClick}
+          />
+        </Col>
+        <Col>
+          <List
+            title="Enemies"
+            items={enemies}
+            color="red"
+            icon="skull"
+            {selected}
+            {handleClick}
+          />
+        </Col>
+      </Row>
+    {:else}
+      <Alert class="primary-text" text>
+        Pick some plants and get planting!
       </Alert>
     {/if}
-    <Row>
-      <Col>
-        <List
-          title="Friends"
-          items={friends}
-          color="green"
-          icon="heart"
-          {selected}
-          {handleClick}
-        />
-      </Col>
-      <Col>
-        <List
-          title="Enemies"
-          items={enemies}
-          color="red"
-          icon="skull"
-          {selected}
-          {handleClick}
-        />
-      </Col>
-    </Row>
   </Col>
-
-  <h2>Your Vegetables</h2>
-  <table>
-    <thead>
-      <tr><th /><th>Friends</th><th>Enemies</th></tr>
-    </thead>
-    <tbody>
-      {#each selected as veg}
-        <tr
-          ><td>{veg}</td>
-          <td>
-            <ul>
-              {#each data[veg].friends as friend}
-                <li>{friend}</li>
-              {/each}
-            </ul>
-          </td>
-          <td>
-            <ul>
-              {#each data[veg].enemies as enemy}
-                <li>{enemy}</li>
-              {/each}
-            </ul>
-          </td>
-        </tr>
-      {/each}
-    </tbody>
-  </table>
 </main>
 
 <style>
@@ -121,21 +99,9 @@
     font-size: 3rem;
   }
 
-  ul {
-    margin: auto 2rem;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
   @media (max-width: 640px) {
     main {
       max-width: none;
-    }
-
-    div.row {
-      width: 100%;
-      margin: auto 1rem;
     }
   }
 </style>
