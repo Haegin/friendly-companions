@@ -54,7 +54,7 @@
           Some of the plants you've selected don't play nicely together.
         </Alert>
       {/if}
-      <Row>
+      <Row class="d-flex flex-column flex-sm-row">
         <Col>
           <List
             title="Friends"
