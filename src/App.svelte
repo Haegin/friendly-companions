@@ -34,6 +34,10 @@
 
 <main>
   <h1>Friendly Companions</h1>
+  <Alert text>
+    Plants in green go well with what you have already selected. Plants in red
+    will hinder the growth of your other plants.
+  </Alert>
   {#each vegetables as veg}
     <Button
       enemy={enemies.includes(veg)}
@@ -73,7 +77,7 @@
         </Col>
       </Row>
     {:else}
-      <Alert class="primary-text" text>
+      <Alert class="light-green-text text-darken-3" text>
         Pick some plants and get planting!
       </Alert>
     {/if}
@@ -89,7 +93,7 @@
   }
 
   h1 {
-    color: #ff3e00;
+    color: #33691e;
     text-transform: uppercase;
     font-size: 3rem;
     font-weight: 100;
